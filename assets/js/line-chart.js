@@ -23,10 +23,6 @@ function cleaning(data) {
     tmin = data.slice(32, 48);
     pesos = data.slice(48, data.length);
     dTemp = tmin.map((e,i) => tmax[i] ? tmax[i] - e : e);
-    // console.log(months);
-    // console.log(tmax);
-    // console.log(tmin);
-    // console.log(pesos);
     return [months, tmax, tmin, pesos, dTemp];
 }
 
