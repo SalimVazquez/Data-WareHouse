@@ -1,6 +1,5 @@
-## Minería de Datos
-## Data Warehouse Actividad 1
-___
+### Minería de Datos
+#### Data Warehouse Actividad 1
 Se integrarán 2 fuentes de datos y se generarán gráficas de pesos y temperaturas
 
 ### Datos
