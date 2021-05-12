@@ -1,8 +1,18 @@
+let months = [];
+let tmax = [];
+let tmin = [];
+let pesos = [];
+let dTemp = [];
+const canva1 = document.getElementById('Graf1').getContext('2d');
+const canva2 = document.getElementById('Graf2').getContext('2d');
+let chartOne;
+let chartTwo;
+
 $.ajax({
     url: '../assets/data/data.csv',
     dataType: "text",
     contentType: "charset=utf-8",
-}).done(grafica1);
+}).done(graphics);
 
 function cleaning(data) {
     let cleanOne = data[15].split("\n");
@@ -23,7 +33,6 @@ function cleaning(data) {
     tmin = data.slice(32, 48);
     pesos = data.slice(48, data.length);
     dTemp = tmin.map((e,i) => tmax[i] ? tmax[i] - e : e);
-    return [months, tmax, tmin, pesos, dTemp];
 }
 
 function searchFrom() {
@@ -36,34 +45,33 @@ function searchTo() {
     console.log(to);
 }
 
-function grafica1(allData) {
+function graphics(allData) {
     let allRows = allData.split(",");
     console.log(allRows);
-    let data = cleaning(allRows);
+    cleaning(allRows);
 
-    var graf1 = document.getElementById('Graf1').getContext('2d');
-    var myChart = new Chart(graf1, {
+    chartOne = new Chart(canva1, {
         type: 'line',
         data: {
-            labels: data[0],
+            labels: months,
             datasets: [
                 {
                     label: 'Temperatura Máxima',
-                    data: data[1],
+                    data: tmax,
                     backgroundColor: 'red',
                     borderColor: 'red',
                     borderWidth: 1,
                 },
                 {
                     label: 'Temperatura Mínima',
-                    data: data[2],
+                    data: tmin,
                     backgroundColor: 'blue',
                     borderColor: 'blue',
                     borderWidth: 1,
                 },
                 {
                     label: 'Pesos',
-                    data: data[3],
+                    data: pesos,
                     backgroundColor: 'green',
                     borderColor: 'green',
                     borderWidth: 1,
@@ -77,24 +85,23 @@ function grafica1(allData) {
                 intersect: false,
             },
         },
-    })
+    });
 
-    var graf2 = document.getElementById('Graf2').getContext('2d');
-    var myChart = new Chart(graf2, {
+    chartTwo = new Chart(canva2, {
         type: 'line',
         data: {
-            labels: data[0],
+            labels: months,
             datasets: [
                 {
                     label: 'Pesos',
-                    data: data[3],
+                    data: pesos,
                     backgroundColor: 'green',
                     borderColor: 'green',
                     borderWidth: 1,
                 },
                 {
                     label: 'Diferencia de Temperaturas',
-                    data: data[4],
+                    data: dTemp,
                     backgroundColor: 'orange',
                     borderColor: 'orange',
                     borderWidth: 1,
