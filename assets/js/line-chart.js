@@ -7,6 +7,20 @@ const canva1 = document.getElementById('Graf1').getContext('2d');
 const canva2 = document.getElementById('Graf2').getContext('2d');
 let chartOne;
 let chartTwo;
+const MESES = [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun",
+    "jul",
+    "ago",
+    "sep",
+    "oct",
+    "nov",
+    "dic",
+];
 
 $.ajax({
     url: '../assets/data/data.csv',
@@ -36,8 +50,19 @@ function cleaning(data) {
 }
 
 function searchFrom() {
-    let from = $('#from').val();
-    console.log(from);
+    let inputFrom = $('#from').val();
+    let dateFrom = new Date(inputFrom);
+    let from = MESES[dateFrom.getMonth()] + '-' + dateFrom.getFullYear().toString().substring(2,4);
+    let parseDateFrom = months.indexOf(from);
+    let auxMonths = months.slice(parseDateFrom, months.length-1);
+    let auxTmax = tmax.slice(parseDateFrom, months.length-1);
+    let auxTmin = tmin.slice(parseDateFrom, months.length-1);
+    let auxPesos = pesos.slice(parseDateFrom, months.length-1);
+    chartOne.data.labels = auxMonths;
+    chartOne.data.datasets[0].data = auxTmax;
+    chartOne.data.datasets[1].data = auxTmin;
+    chartOne.data.datasets[2].data = auxPesos;
+    chartOne.update();
 }
 
 function searchTo() {
