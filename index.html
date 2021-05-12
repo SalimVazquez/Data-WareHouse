@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charts | UPCH-MDD</title>
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous"></script>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <!-- One -->
+            <section id="one">
+                <div class="image main" data-position="center">
+                    <img src="./assets/images/banner.jpg" alt="" />
+                </div>
+                <div class="container">
+                    <header class="major">
+                        <h2>Minería de Datos</h2>
+                        <p>Data Warehouse<br />Actividad 1.</p>
+                    </header>
+                    <div class="row">
+                        <div class="col-6 col-12-xsmall">
+                            <h5>Caracteristicas de la gráfica 1</h5>
+                            <ul>
+                                <li>Selección de rango de fechas.</li>
+                                <li>
+                                    Mostrar en la misma gráfica las
+                                    temperaturas máximas, mínimas y el peso
+                                    de los lotes.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <h5>Caracteristicas de la gráfica 2</h5>
+                            <ul>
+                                <li>Selección de rango de fechas.</li>
+                                <li>
+                                    Mostrar en la misma el diferencial de
+                                    temperaturas (máxima–mínima) y el peso
+                                    de los lotes
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two -->
+            <section id="two">
+                <div class="container">
+                    <h3>Gráfica 1</h3>
+                    <p>Gráfica con las temperaturas máximas, mínimas de <strong>Chiapas</strong> 
+                        y el peso de los lotes.</p>                    
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-xsmall">
+                            <input
+                                type="date"
+                                name="from"
+                                id="from"
+                                onchange="searchFrom()"
+                            />
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <input
+                                type="date"
+                                name="to"
+                                id="to"
+                                min="2019-01-01"
+                                max="2020-04-01"
+                                onchange="searchTo()"
+                            />
+                        </div>
+                    </div>
+                    <canvas id="Graf1" width="400" height="400"></canvas>
+                </div>
+            </section>
+            <!-- three -->
+            <section id="three">
+                <div class="container">
+                    <h3>Gráfica 2</h3>
+                    <p>Mostrar la diferencia de temperaturas (maxima–mínima) de <strong>Chiapas</strong> 
+                        y el peso de los lotes.</p>                    
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-xsmall">
+                            <input
+                                type="date"
+                                name="from"
+                                id="from"
+                                onchange="searchFrom()"
+                            />
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <input
+                                type="date"
+                                name="to"
+                                id="to"
+                                min="2019-01-01"
+                                max="2020-04-01"
+                                onchange="searchTo()"
+                            />
+                        </div>
+                    </div>
+                    <canvas id="Graf2" width="400" height="400"></canvas>
+                </div>
+            </section>
+        </div>
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <ul class="copyright">
+                    <li>&copy; UPCH Mineria de Datos</li>
+                    <li>
+                        Integrantes:
+                        <ul class="copyright">
+                            <li>
+                                <h4>Salim Vazquez Solis<br />Rodrigo Mijangos</h4>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.scrollex.min.js"></script>
+    <script src="./assets/js/jquery.scrolly.min.js"></script>
+    <script src="./assets/js/browser.min.js"></script>
+    <script src="./assets/js/breakpoints.min.js"></script>
+    <script src="./assets/js/util.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/line-chart.js"></script>
+</body>
+</html>
