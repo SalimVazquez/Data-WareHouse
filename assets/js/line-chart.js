@@ -49,7 +49,7 @@ function cleaning(data) {
     dTemp = tmin.map((e,i) => tmax[i] ? tmax[i] - e : e);
 }
 
-function searchFrom() {
+function searchFromGraph1() {
     let inputFrom = $('#from').val();
     let dateFrom = new Date(inputFrom);
     let from = MESES[dateFrom.getMonth()] + '-' + dateFrom.getFullYear().toString().substring(2,4);
@@ -65,9 +65,14 @@ function searchFrom() {
     chartOne.update();
 }
 
-function searchTo() {
-    let to = $('#to').val();
-    console.log(to);
+function resetGraph1() {
+    let dateControl = document.querySelector('input[id="from"]');
+    dateControl.value = '0';
+    chartOne.data.labels = months;
+    chartOne.data.datasets[0].data = tmax;
+    chartOne.data.datasets[1].data = tmin;
+    chartOne.data.datasets[2].data = pesos;
+    chartOne.update();
 }
 
 function graphics(allData) {
