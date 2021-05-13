@@ -100,7 +100,6 @@ function resetGraph2() {
 
 function graphics(allData) {
     let allRows = allData.split(",");
-    console.log(allRows);
     cleaning(allRows);
 
     chartOne = new Chart(canva1, {
