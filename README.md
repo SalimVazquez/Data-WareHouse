@@ -7,3 +7,8 @@ Se utilizaron [archivos .csv](/assets/data) descargados de [Conagua](https://smn
 
 ### Gráficas
 Se utilizo la libreria [ChartJS](https://www.chartjs.org/), para representarlos los `datos .csv`, [configuración.](/assets/js/line-chart.js)
+
+### **Importante**
+Para poder ver las gráficas, es necesario desplegar en un VirtualHost, por la lectura de recursos (CORS).
+- [WampServer o Xampp](https://programacionymas.com/blog/archivo-hosts-y-virtual-hosts-apache-windows)
+- [Docker](https://github.com/SalimVazquez/Data-WareHouse/tree/dockerizing#dockerizar)
