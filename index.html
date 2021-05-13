@@ -63,7 +63,7 @@
                             <input
                                 type="date"
                                 name="from"
-                                id="from"
+                                id="fromGraph1"
                                 min="2019-01-01"
                                 max="2020-04-01"
                                 value="0"
@@ -89,19 +89,16 @@
                             <input
                                 type="date"
                                 name="from"
-                                id="from"
-                                onchange="searchFrom()"
+                                id="fromGraph2"
+                                min="2019-01-01"
+                                max="2020-04-01"
+                                value="0"
+                                onchange="searchFromGraph2()"
                             />
                         </div>
                         <div class="col-6 col-12-xsmall">
-                            <input
-                                type="date"
-                                name="to"
-                                id="to"
-                                min="2019-01-01"
-                                max="2020-04-01"
-                                onchange="searchTo()"
-                            />
+                            <button class="button primary small icon solid fa-sync-alt" onclick="resetGraph2()">
+                                Restaurar</button>
                         </div>
                     </div>
                     <canvas id="Graf2" width="400" height="400"></canvas>

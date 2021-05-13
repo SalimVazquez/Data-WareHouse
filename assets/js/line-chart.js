@@ -50,7 +50,7 @@ function cleaning(data) {
 }
 
 function searchFromGraph1() {
-    let inputFrom = $('#from').val();
+    let inputFrom = $('#fromGraph1').val();
     let dateFrom = new Date(inputFrom);
     let from = MESES[dateFrom.getMonth()] + '-' + dateFrom.getFullYear().toString().substring(2,4);
     let parseDateFrom = months.indexOf(from);
@@ -66,13 +66,36 @@ function searchFromGraph1() {
 }
 
 function resetGraph1() {
-    let dateControl = document.querySelector('input[id="from"]');
+    let dateControl = document.querySelector('input[id="fromGraph1"]');
     dateControl.value = '0';
     chartOne.data.labels = months;
     chartOne.data.datasets[0].data = tmax;
     chartOne.data.datasets[1].data = tmin;
     chartOne.data.datasets[2].data = pesos;
     chartOne.update();
+}
+
+function searchFromGraph2() {
+    let inputFrom = $('#fromGraph2').val();
+    let dateFrom = new Date(inputFrom);
+    let from = MESES[dateFrom.getMonth()] + '-' + dateFrom.getFullYear().toString().substring(2,4);
+    let parseDateFrom = months.indexOf(from);
+    let auxMonths = months.slice(parseDateFrom, months.length-1);
+    let auxPesos = pesos.slice(parseDateFrom, months.length-1);
+    let auxDtemp = dTemp.slice(parseDateFrom, months.length-1);
+    chartTwo.data.labels = auxMonths;
+    chartTwo.data.datasets[0].data = auxPesos;
+    chartTwo.data.datasets[1].data = auxDtemp;
+    chartTwo.update();
+}
+
+function resetGraph2() {
+    let dateControl = document.querySelector('input[id="fromGraph2"]');
+    dateControl.value = '0';
+    chartTwo.data.labels = months;
+    chartTwo.data.datasets[0].data = pesos;
+    chartTwo.data.datasets[1].data = dTemp;
+    chartTwo.update();
 }
 
 function graphics(allData) {
