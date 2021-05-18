@@ -113,6 +113,7 @@ function graphics(allData) {
                     backgroundColor: 'red',
                     borderColor: 'red',
                     borderWidth: 1,
+                    yAxisID: 'y1'
                 },
                 {
                     label: 'Temperatura Mínima',
@@ -120,6 +121,7 @@ function graphics(allData) {
                     backgroundColor: 'blue',
                     borderColor: 'blue',
                     borderWidth: 1,
+                    yAxisID: 'y'
                 },
                 {
                     label: 'Pesos',
@@ -127,6 +129,7 @@ function graphics(allData) {
                     backgroundColor: 'green',
                     borderColor: 'green',
                     borderWidth: 1,
+                    yAxisID: 'y'
                 },
             ],
         },
@@ -134,8 +137,24 @@ function graphics(allData) {
             resposive: true,
             interaction: {
                 mode: 'index',
-                intersect: false,
+                intersect: true,
             },
+            stacked: false,
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    grid: {
+                        drawOnChartArea: false
+                    },
+                },
+            }
         },
     });
 
@@ -150,6 +169,7 @@ function graphics(allData) {
                     backgroundColor: 'green',
                     borderColor: 'green',
                     borderWidth: 1,
+                    yAxisID: 'y1'
                 },
                 {
                     label: 'Diferencia de Temperaturas',
@@ -157,6 +177,7 @@ function graphics(allData) {
                     backgroundColor: 'orange',
                     borderColor: 'orange',
                     borderWidth: 1,
+                    yAxisID: 'y'
                 },
             ],
         },
@@ -164,8 +185,24 @@ function graphics(allData) {
             resposive: true,
             interaction: {
                 mode: 'index',
-                intersect: false,
+                intersect: true,
             },
+            stacked: false,
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    grid: {
+                        drawOnChartArea: false
+                    },
+                },
+            }
         },
     })
 }
