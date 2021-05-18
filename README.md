@@ -8,6 +8,16 @@ Se utilizaron [archivos .csv](/assets/data) descargados de [Conagua](https://smn
 ### Gráficas
 Se utilizo la libreria [ChartJS](https://www.chartjs.org/), para representarlos los `datos .csv`, [configuración.](/assets/js/line-chart.js)
 
+### Dockerizar
+Para levantar la aplicación en un contenedor
+- Buildear la imagen
+  ```bash
+  docker build -t $name-image:$version .
+  ```
+- Crear contenedor
+  ```bash
+  docker run --name $name-container -p $portInHost:$portInContainer -d $name-image:$version
+  ```
 ### **Importante**
 Para poder ver las gráficas, es necesario desplegar en un VirtualHost, por la lectura de recursos (CORS).
 - [WampServer o Xampp](https://programacionymas.com/blog/archivo-hosts-y-virtual-hosts-apache-windows)
